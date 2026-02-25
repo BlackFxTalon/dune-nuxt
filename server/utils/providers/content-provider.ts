@@ -1,22 +1,47 @@
 import type { Card, FaqEntry, House, Leader, RatingPayload } from '~/shared/types/domain'
 import type { DataProvider } from '~/shared/types/providers'
+import cardsData from '~/content/cards/base-sample.json'
+import imperiumRatings from '~/content/ratings/imperium.json'
+import uprisingRatings from '~/content/ratings/uprising.json'
 
-const cards: Card[] = []
-const leaders: Leader[] = []
-const houses: House[] = []
-const faqEntries: FaqEntry[] = []
+const cards: Card[] = cardsData as Card[]
+
+const leaders: Leader[] = [
+  {
+    slug: 'chani',
+    title: 'Chani',
+    set: 'base',
+    difficulty: 'medium',
+    faction: ['fremen']
+  }
+]
+
+const houses: House[] = [
+  {
+    slug: 'dom-atreides',
+    title: 'House Atreides',
+    set: 'base',
+    motto: 'Here I am, here I remain.',
+    summary: 'Political flexibility and steady tempo.'
+  }
+]
+
+const faqEntries: FaqEntry[] = [
+  {
+    id: 'what-is-this',
+    question: 'What is this site?',
+    answer: 'A fan-made reference for Dune Imperium players.'
+  },
+  {
+    id: 'is-official',
+    question: 'Is this official?',
+    answer: 'No, this is a community project.'
+  }
+]
 
 const ratingsByMode: Record<'imperium' | 'uprising', RatingPayload> = {
-  imperium: {
-    mode: 'imperium',
-    updatedAt: new Date(0).toISOString(),
-    entries: []
-  },
-  uprising: {
-    mode: 'uprising',
-    updatedAt: new Date(0).toISOString(),
-    entries: []
-  }
+  imperium: imperiumRatings as RatingPayload,
+  uprising: uprisingRatings as RatingPayload
 }
 
 export const contentProvider: DataProvider = {

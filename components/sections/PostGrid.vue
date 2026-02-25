@@ -1,14 +1,14 @@
-<script setup lang="ts">
-interface PostItem {
-  title: string
-  description: string
-  to: string
-}
-
-defineProps<{
-  heading: string
-  items: PostItem[]
-}>()
+<script setup>
+defineProps({
+  heading: {
+    type: String,
+    required: true
+  },
+  items: {
+    type: Array,
+    required: true
+  }
+})
 </script>
 
 <template>

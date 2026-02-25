@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "dune-the-spice-must-flow",
+    "title": "The Spice Must Flow",
+    "set": "base",
+    "cost": 9,
+    "faction": ["imperium"],
+    "sortName": "spice must flow",
+    "sortCost": 9,
+    "type": "imperium",
+    "text": "Worth victory points and strong deck value."
+  },
+  {
+    "slug": "dune-signet-ring",
+    "title": "Signet Ring",
+    "set": "base",
+    "cost": 1,
+    "faction": ["atreides"],
+    "sortName": "signet ring",
+    "sortCost": 1,
+    "type": "starter",
+    "text": "Flexible action with card draw."
+  }
+]

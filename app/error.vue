@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: 'AppErrorPage'
+})
+
 defineProps({
   error: {
     type: Object,

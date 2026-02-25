@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import RichContent from '~/components/content/RichContent.vue'
 
 const route = useRoute()
@@ -13,7 +13,7 @@ if (!data.value) {
 }
 
 const body = computed(() => {
-  const raw = (data.value as Record<string, unknown>).body
+  const raw = data.value?.body
   return typeof raw === 'string' ? raw : ''
 })
 </script>

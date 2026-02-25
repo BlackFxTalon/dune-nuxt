@@ -1,10 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import LeaderFilters from '~/components/leaders/LeaderFilters.vue'
-import type { LeadersFilterState } from '~/composables/useLeaders'
 import { useLeaders } from '~/composables/useLeaders'
 import { filterLeaders } from '~/utils/leaders-filter'
 
-const filters = ref<LeadersFilterState>({
+const filters = ref({
   set: '',
   difficulty: ''
 })
@@ -16,7 +15,7 @@ const setOptions = computed(() => [...new Set(items.value.map((leader) => leader
 const difficultyOptions = computed(() => [...new Set(items.value.map((leader) => leader.difficulty))])
 const visibleLeaders = computed(() => filterLeaders(items.value, filters.value))
 
-const onUpdateFilters = (next: LeadersFilterState) => {
+const onUpdateFilters = (next) => {
   filters.value = { ...filters.value, ...next }
 }
 

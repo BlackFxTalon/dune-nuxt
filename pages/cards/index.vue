@@ -1,12 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import CardFilters from '~/components/cards/CardFilters.vue'
 import CardGrid from '~/components/cards/CardGrid.vue'
-import type { CardsFilterState } from '~/composables/useCards'
 import { useCards } from '~/composables/useCards'
 import { applyCardFilters } from '~/utils/cards-filter'
 import { sortCards } from '~/utils/cards-sort'
 
-const filters = ref<CardsFilterState>({
+const filters = ref({
   set: '',
   faction: '',
   search: '',
@@ -23,7 +22,7 @@ const factionOptions = computed(() => [...new Set(items.value.flatMap((card) => 
 const filtered = computed(() => applyCardFilters(items.value, filters.value))
 const sorted = computed(() => sortCards(filtered.value, filters.value.sort === 'cost' ? 'cost' : 'name'))
 
-const onUpdateFilters = (next: CardsFilterState) => {
+const onUpdateFilters = (next) => {
   filters.value = { ...filters.value, ...next }
 }
 

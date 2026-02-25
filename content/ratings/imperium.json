@@ -1,0 +1,18 @@
+{
+  "mode": "imperium",
+  "updatedAt": "2026-02-25T00:00:00.000Z",
+  "entries": [
+    {
+      "player": "ArrakisFox",
+      "score": 1820,
+      "faction": "fremen",
+      "notes": "Strong conflict conversion."
+    },
+    {
+      "player": "SpiceLedger",
+      "score": 1765,
+      "faction": "emperor",
+      "notes": "High consistency in matchups."
+    }
+  ]
+}
